@@ -1,0 +1,33 @@
+{
+  "name": "nibi",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev:api": "npm run dev --workspace apps/demo-api",
+    "dev:agent-b": "npm run dev --workspace apps/agent-b",
+    "dev:agent": "npm run dev --workspace apps/demo-agent",
+    "test:protocol": "tsx scripts/protocol-integration-test.ts",
+    "test:e2e": "tsx scripts/e2e-http-test.ts",
+    "test:e2e-a2a": "tsx scripts/e2e-agent-to-agent-test.ts",
+    "test:registry": "tsx scripts/e2e-registry-test.ts",
+    "test:real-register-vault": "tsx scripts/real-sdk-register-vault-test.ts",
+    "test:real-sdk": "tsx scripts/real-sdk-smoke-test.ts",
+    "test:real-deposit": "tsx scripts/real-sdk-deposit-test.ts",
+    "test:real-fresh-vault": "tsx scripts/real-sdk-fresh-vault-test.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "@tachibtc/taurus-vault-core": "^0.3.3",
+    "@tachibtc/taurus-wallet-aggregator": "^0.4.4"
+  }
+}
