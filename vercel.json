@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd apps/demo-agent && npx vite build",
+  "outputDirectory": "apps/demo-agent/dist",
+  "installCommand": "npm install"
+}
